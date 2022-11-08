@@ -49,10 +49,12 @@ function App() {
         <div className="App">
             <h1>Carga de estudiantes</h1>
             <form onSubmit={createCard} className={formularyError? 'form-error' : ''}>
-                <label htmlFor="colorName">Nome</label>
+                <h1>Adicionar Nova Cor</h1>
+                <p>Digite o nome da cor e a selecione no formato HEX abaixo</p>
+                <label htmlFor="colorName">Nome: </label>
                 <input type="text" id="colorName" value={colorName} onChange={event => setColorName(event.target.value)}/>
 
-                <label htmlFor="colorHex">Codigo da cor</label>
+                <label htmlFor="colorHex">Codigo da cor: </label>
                 <input  id="colorHex" type="color" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
                 <button type='submit'>Adicionar</button>
 
