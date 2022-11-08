@@ -4,18 +4,17 @@ import {useState} from "react";
 import {Card} from "./Card";
 
 const validateColorName = (colorName) => {
-    const withoutSpaces = colorName.trim();
+    let withoutSpaces = colorName.trim();
     return withoutSpaces.length > 2 ? withoutSpaces : false
 }
 
 const validateColorHex = (colorHex) => {
-    const withoutSpaces = colorHex.trim();
-    const split = withoutSpaces.split("")
+    let withoutSpaces = colorHex.trim();
+    let split = withoutSpaces.split("")
     console.log(split)
     console.log(split[0])
     return withoutSpaces.length > 5 && split[0] === "#" ? withoutSpaces : false;
 }
-
 
 function App() {
     // Aqui você irá criar os Estados para manipular os Inputs
@@ -33,7 +32,7 @@ function App() {
             codigo: colorHex,
         }
         console.log(validateColorHex(colorName))
-        if (!validateColorName(colorName) || validateColorHex(colorHex)) {
+        if (!validateColorName(colorName) || !validateColorHex(colorHex)) {
             setFormularyError(true)
         }else{
             setFormularyError(false)
@@ -50,11 +49,12 @@ function App() {
         <div className="App">
             <h1>Carga de estudiantes</h1>
             <form onSubmit={createCard} className={formularyError? 'form-error' : ''}>
+
                 <label htmlFor="colorName">Nome</label>
-                <input type="text" value={colorName} onChange={event => setColorName(event.target.value)}/>
+                <input type="text" id="colorName" value={colorName} onChange={event => setColorName(event.target.value)}/>
 
                 <label htmlFor="colorHex">Codigo da cor</label>
-                <input type="text" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
+                <input  id="colorHex" type="text" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
 
                 <button type='submit'>Adicionar</button>
 
