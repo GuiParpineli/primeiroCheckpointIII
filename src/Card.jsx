@@ -2,9 +2,10 @@
 
 export function Card(props) {
     return (
-        <div className="cardItem" >
-            <p id="square">{props.values.color}</p>
-            <h1>{props.values.codigo}</h1>
+
+        <div className="cardItem" style={{backgroundColor: props.values.codigo}} >
+            <p>{props.values.color}</p>
+            <h2>{props.values.codigo}</h2>
         </div>
     )
 }

@@ -49,13 +49,11 @@ function App() {
         <div className="App">
             <h1>Carga de estudiantes</h1>
             <form onSubmit={createCard} className={formularyError? 'form-error' : ''}>
-
                 <label htmlFor="colorName">Nome</label>
                 <input type="text" id="colorName" value={colorName} onChange={event => setColorName(event.target.value)}/>
 
                 <label htmlFor="colorHex">Codigo da cor</label>
                 <input  id="colorHex" type="text" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
-
                 <button type='submit'>Adicionar</button>
 
             </form>
@@ -64,7 +62,7 @@ function App() {
                     <span>O seu formulário contem erros</span>
                 ) : null
             }
-            <div>
+            <div className="cards">
                 {
                     allCards.map(
                         cards =>(
