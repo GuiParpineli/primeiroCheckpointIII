@@ -21,7 +21,7 @@ function App() {
 
     const [allCards, setAllCards] = useState([])
     const [colorName, setColorName] = useState('')
-    const [colorHex, setColorHex] = useState('')
+    const [colorHex, setColorHex] = useState('#e66465')
     const [formularyError, setFormularyError] = useState(false)
 
     function createCard(event) {
@@ -53,7 +53,7 @@ function App() {
                 <input type="text" id="colorName" value={colorName} onChange={event => setColorName(event.target.value)}/>
 
                 <label htmlFor="colorHex">Codigo da cor</label>
-                <input  id="colorHex" type="text" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
+                <input  id="colorHex" type="color" value={colorHex} onChange={event => setColorHex(event.target.value)}/>
                 <button type='submit'>Adicionar</button>
 
             </form>
