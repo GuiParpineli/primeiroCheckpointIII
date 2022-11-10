@@ -11,8 +11,6 @@ const validateColorName = (colorName) => {
 const validateColorHex = (colorHex) => {
     let withoutSpaces = colorHex.trim();
     let split = withoutSpaces.split("")
-    console.log(split)
-    console.log(split[0])
     return withoutSpaces.length > 5 && split[0] === "#" ? withoutSpaces : false;
 }
 
